@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'stm'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile files('lib/ganymed-ssh2-build210.jar')
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "ua.stamanker.Application"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
