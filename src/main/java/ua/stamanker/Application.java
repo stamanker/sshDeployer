@@ -10,14 +10,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Application {
 
+    static String[] EXPECTED_ARGS = new String[] {"host", "login", "pwd", "path2Build", "path2RemoteDir"};
+
     public static void main(String[] args) throws Exception {
         long start = System.currentTimeMillis();
-        if(args.length<3) {
-            throw new RuntimeException("Program args: host login pwd path2Build path2RemoteDir");
+        if(args.length < EXPECTED_ARGS.length) {
+            throw new RuntimeException("Program args: " + Arrays.toString(EXPECTED_ARGS));
         }
         String hostname = args[0];
         String login = args[1];
