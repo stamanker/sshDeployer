@@ -32,8 +32,8 @@ public class Application {
         }
         transfer(conn, localFile, remoteDir);
         executeCommand(conn, "ls -lt");
-        executeCommand(conn, "./0");
-        executeCommand(conn, "./1");
+        executeCommand(conn, "./stop.sh");
+        executeCommand(conn, "./start.sh");
         conn.close();
         System.out.println(String.format("%s Processing took %d ms",
                 new SimpleDateFormat("HH:mm:ss").format(new Date()),

@@ -2,8 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'stm'
-version '1.0'
+group 'ua.stamanker'
 
 sourceCompatibility = 1.8
 
